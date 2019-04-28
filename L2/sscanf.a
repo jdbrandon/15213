@@ -1,0 +1,29 @@
+0x00007ffff7aac9a0 <+0>:	sub    $0xd8,%rsp
+   0x00007ffff7aac9a7 <+7>:	movzbl %al,%eax
+   0x00007ffff7aac9aa <+10>:	mov    %rdx,0x30(%rsp)
+   0x00007ffff7aac9af <+15>:	lea    0x0(,%rax,4),%rdx
+   0x00007ffff7aac9b7 <+23>:	lea    0x3c(%rip),%rax        # 0x7ffff7aac9fa <sscanf+90>
+   0x00007ffff7aac9be <+30>:	mov    %rcx,0x38(%rsp)
+   0x00007ffff7aac9c3 <+35>:	mov    %r8,0x40(%rsp)
+   0x00007ffff7aac9c8 <+40>:	sub    %rdx,%rax
+   0x00007ffff7aac9cb <+43>:	lea    0xcf(%rsp),%rdx
+   0x00007ffff7aac9d3 <+51>:	mov    %r9,0x48(%rsp)
+   0x00007ffff7aac9d8 <+56>:	jmpq   *%rax
+   0x00007ffff7aac9da <+58>:	movaps %xmm7,-0xf(%rdx)
+   0x00007ffff7aac9de <+62>:	movaps %xmm6,-0x1f(%rdx)
+   0x00007ffff7aac9e2 <+66>:	movaps %xmm5,-0x2f(%rdx)
+   0x00007ffff7aac9e6 <+70>:	movaps %xmm4,-0x3f(%rdx)
+   0x00007ffff7aac9ea <+74>:	movaps %xmm3,-0x4f(%rdx)
+   0x00007ffff7aac9ee <+78>:	movaps %xmm2,-0x5f(%rdx)
+   0x00007ffff7aac9f2 <+82>:	movaps %xmm1,-0x6f(%rdx)
+   0x00007ffff7aac9f6 <+86>:	movaps %xmm0,-0x7f(%rdx)
+   0x00007ffff7aac9fa <+90>:	lea    0xe0(%rsp),%rax
+   0x00007ffff7aaca02 <+98>:	mov    %rsp,%rdx
+   0x00007ffff7aaca05 <+101>:	movl   $0x10,(%rsp)
+   0x00007ffff7aaca0c <+108>:	movl   $0x30,0x4(%rsp)
+   0x00007ffff7aaca14 <+116>:	mov    %rax,0x8(%rsp)
+   0x00007ffff7aaca19 <+121>:	lea    0x20(%rsp),%rax
+   0x00007ffff7aaca1e <+126>:	mov    %rax,0x10(%rsp)
+   0x00007ffff7aaca23 <+131>:	callq  0x7ffff7ab2950 <vsscanf>
+   0x00007ffff7aaca28 <+136>:	add    $0xd8,%rsp
+   0x00007ffff7aaca2f <+143>:	retq

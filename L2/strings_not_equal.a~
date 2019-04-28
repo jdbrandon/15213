@@ -1,0 +1,37 @@
+0		push %r12
+2		push %rbp
+3		push %rbx
+4		mov %rdi,%rbp
+7		mov %rsi,%r12 //preamble
+10		callq 0x4011d0 <string_length>
+15		mov %eax,%ebx //mov length of x to ebx
+17		mov %r12,%rdi
+20		callq <string_length>
+25		cmp %eax,%ebx //cmp length x to length y
+27		jne fail
+29		movzbl 0x0(%rbp),%eax //strings of equal size
+33		test %al,%al
+35		je equal (strings_not_equal + 86)
+37		mov %rbp,%rcx
+40		mov %r12,%rdx
+43		cmp (%r12),%al
+47		je label0 (strings_not_equal + 68)
+49		jmp fail
+51	loop:	movzbl 0x1(%rdx),%eax
+55		add $1,%rcx
+59		add $1,%rdx
+63		cmp %al,%sil
+66		jne fail
+68	label0:	movzbl 1(%rcx),%esi
+72		test %sil, %sil
+75		jne loop
+77		jmp equal
+79	fail: 	mov $1,%eax
+84		jmp finish (strings_not_equal + 91)
+86	equal: 	mov $0, %eax
+91	finish: pop %rbx
+92		pop %rbp
+93		pop %r12
+95		xchg %ax,%ax
+97		retq
+

@@ -1,0 +1,28 @@
+Dump of assembler code for function phase_2:
+=> 0x0000000000400ff2 <+0>:	push   %rbp
+   0x0000000000400ff3 <+1>:	push   %rbx
+   0x0000000000400ff4 <+2>:	sub    $0x28,%rsp
+   0x0000000000400ff8 <+6>:	mov    %rsp,%rsi
+   0x0000000000400ffb <+9>:	callq  0x401403 <read_six_numbers>
+   0x0000000000401000 <+14>:	cmpl   $0x0,(%rsp) //altered in read 6
+   0x0000000000401004 <+18>:	jne    0x40100d <phase_2+27> //fail
+   0x0000000000401006 <+20>:	cmpl   $0x1,0x4(%rsp)
+   0x000000000040100b <+25>:	je     0x401015 <phase_2+35>
+   0x000000000040100d <+27>:	nopl   (%rax)
+   0x0000000000401010 <+30>:	callq  0x4013cd <explode_bomb>
+   0x0000000000401015 <+35>:	lea    0x8(%rsp),%rbx //gets the 3rd n
+   0x000000000040101a <+40>:	lea    0x18(%rsp),%rbp//2nd msb of 4th
+   0x000000000040101f <+45>:	mov    -0x8(%rbx),%eax//1st 
+   0x0000000000401022 <+48>:	add    -0x4(%rbx),%eax//2nd
+   0x0000000000401025 <+51>:	cmp    %eax,(%rbx)
+   0x0000000000401027 <+53>:	je     0x40102e <phase_2+60>
+   0x0000000000401029 <+55>:	callq  0x4013cd <explode_bomb>
+   0x000000000040102e <+60>:	add    $0x4,%rbx//ptr to 3rd
+   0x0000000000401032 <+64>:	cmp    %rbp,%rbx //what is rbp??
+   0x0000000000401035 <+67>:	jne    0x40101f <phase_2+45> //loops 
+   0x0000000000401037 <+69>:	add    $0x28,%rsp
+   0x000000000040103b <+73>:	pop    %rbx
+   0x000000000040103c <+74>:	pop    %rbp
+   0x000000000040103d <+75>:	retq
+
+0x00000004 0x00000005
